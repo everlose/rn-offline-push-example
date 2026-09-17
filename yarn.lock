@@ -1961,10 +1961,10 @@
   resolved "https://registry.npmmirror.com/@vscode/sudo-prompt/-/sudo-prompt-9.3.2.tgz"
   integrity sha512-gcXoCN00METUNFeQOFJ+C9xUI0DKB+0EGMVg7wbVYRHBw2Eq3fKisDZOkRdOz3kqXRKOENMfShPOmypw1/8nOw==
 
-"@yxim/nim-rn-sdk-ng@file:../../03.IMWeb/nim-web-sdk-v10/temp/yxim-nim-rn-sdk-ng-10.11.5.tgz":
-  version "10.11.5"
-  resolved "file:../../03.IMWeb/nim-web-sdk-v10/temp/yxim-nim-rn-sdk-ng-10.11.5.tgz"
-  integrity sha512-1txEU7PmLKz9sfXTSEp45Ge3d9vOMI8JCp44djzKAU/mz7Z121xvHPJOloO2Lo7QlQvUa/aKBC1maALGX1HXjg==
+"@yxim/nim-rn-sdk-ng@10.11.5-alpha.6":
+  version "10.11.5-alpha.6"
+  resolved "https://registry.npmmirror.com/@yxim/nim-rn-sdk-ng/-/nim-rn-sdk-ng-10.11.5-alpha.6.tgz"
+  integrity sha512-iC1dbNTLXRqjIssoU8OImA9ATRQeNMeEVHdx0/e43MQK2+p4Uces1FJlB6C0fUI1UH4tkqN+ilwq0/OZZfTJEQ==
 
 abort-controller@^3.0.0:
   version "3.0.0"

@@ -358,3 +358,7 @@ Android 原生构建：
 cd android
 ./gradlew assembleDebug
 ```
+
+## 8. 注意鸿蒙项目
+
+鸿蒙工程已尝试可编译 API 21+.
