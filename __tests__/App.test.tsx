@@ -18,5 +18,7 @@ it('renders correctly', async () => {
     tree = renderer.create(<App />);
     await Promise.resolve();
   });
-  tree!.unmount();
+  act(() => {
+    tree!.unmount();
+  });
 });

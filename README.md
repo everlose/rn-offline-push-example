@@ -306,7 +306,24 @@ yarn android
 
 # iOS
 yarn ios
+
+# HarmonyOS（需要 DEVECO_SDK_HOME 指向 DevEco Studio 的 sdk 目录）
+DEVECO_SDK_HOME="/Applications/DevEco-Studio.app/Contents/sdk" yarn harmony
 ```
+
+### HarmonyOS 编译环境
+
+本工程使用 React Native `0.84.1`、RNOH `0.84.3` 和 Harmony AsyncStorage `2.3.0-beta.1`。RNOH `0.84.3` 使用 API 21 引入的 WebSocket 与 ArkUI NDK 接口，因此 DevEco Studio 中必须安装 API 21 或更高版本的 HarmonyOS SDK；推荐安装与测试设备一致的 API 26 SDK。仅安装 API 20 会在 ArkTS 或 CMake 编译阶段失败。
+
+首次运行前，在 DevEco Studio 的 SDK Manager 中确认 API 21+ SDK 已安装，然后执行：
+
+```bash
+export DEVECO_SDK_HOME="/Applications/DevEco-Studio.app/Contents/sdk"
+yarn dev
+yarn harmony
+```
+
+也可以直接用 DevEco Studio 打开 `harmony/`，配置自动签名后运行 `entry`。鸿蒙端当前支持 RN 页面、NIM 登录和 AsyncStorage；厂商离线推送暂不接入。
 
 ## 7. 配置与提交安全
 
@@ -341,3 +358,7 @@ Android 原生构建：
 cd android
 ./gradlew assembleDebug
 ```
+
+## 8. 注意鸿蒙项目
+
+鸿蒙工程已尝试可编译 API 21+.

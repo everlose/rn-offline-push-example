@@ -23,7 +23,8 @@ import {
   RN_PACKAGE_NAME,
   STATIC_TOKEN,
 } from './config';
-import NIMSDK from 'nim-web-sdk-ng/dist/v2/NIM_RN_SDK';
+// import NIMSDK from 'nim-web-sdk-ng/dist/v2/NIM_RN_SDK';
+import NIMSDK from '@yxim/nim-rn-sdk-ng';
 
 const RN_MAIN_ACTIVITY = `${RN_PACKAGE_NAME}.MainActivity`;
 type NimInstance = InstanceType<typeof NIMSDK> & {

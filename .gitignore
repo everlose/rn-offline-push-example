@@ -53,6 +53,7 @@ yarn-error.log
 
 # Bundle artifact
 *.jsbundle
+harmony/entry/src/main/resources/rawfile/
 
 # Ruby / CocoaPods
 **/Pods/
@@ -78,3 +79,4 @@ yarn-error.log
 
 # config
 config.ts
+.yunxin-devflow/
