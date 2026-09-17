@@ -1,7 +1,13 @@
 import PushPlugin from './PushPlugin';
 import {offlinePushConfig} from '../config';
+import {Platform} from 'react-native';
 
 export function configureOfflinePush(nim: any): void {
+  if ((Platform.OS as string) === 'harmony') {
+    console.log('[NIM][offlinePush] HarmonyOS push integration is deferred');
+    return;
+  }
+
   const settingService = nim?.V2NIMSettingService;
   if (!settingService?.setOfflinePushConfig) {
     throw new Error(
