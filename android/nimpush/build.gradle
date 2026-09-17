@@ -1,6 +1,7 @@
 apply plugin: 'com.android.library'
 
 android {
+    namespace 'com.netease.nim.rn.push'
     compileSdkVersion rootProject.ext.compileSdkVersion
     defaultConfig {
         minSdkVersion rootProject.ext.minSdkVersion
@@ -19,7 +20,7 @@ android {
 
 dependencies {
     compileOnly fileTree(dir: 'libs', include: ['*.jar', '*.aar'])
-    api "com.facebook.react:react-native:+"
+    compileOnly "com.facebook.react:react-android"
 
     api 'com.netease.nimlib:push:9.17.1'
     api 'com.netease.nimlib:basesdk:9.17.1'
