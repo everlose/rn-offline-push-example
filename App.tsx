@@ -26,6 +26,10 @@ import {
 // import NIMSDK from 'nim-web-sdk-ng/dist/v2/NIM_RN_SDK';
 import NIMSDK from '@yxim/nim-rn-sdk-ng';
 
+// netinfo 不由 SDK 声明依赖，由宿主在首次登录前注入；鸿蒙端需另装 @react-native-ohos/netinfo 后再打开
+const NetInfo = require('@react-native-community/netinfo');
+NIMSDK.registerPlugin(NetInfo.default ?? NetInfo, 'netinfo');
+
 const RN_MAIN_ACTIVITY = `${RN_PACKAGE_NAME}.MainActivity`;
 type NimInstance = InstanceType<typeof NIMSDK> & {
   destroy: () => Promise<void>;

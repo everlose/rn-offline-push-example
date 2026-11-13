@@ -80,3 +80,4 @@ harmony/entry/src/main/resources/rawfile/
 # config
 config.ts
 .yunxin-devflow/
+logs/

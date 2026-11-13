@@ -10,14 +10,16 @@
     "start": "react-native start",
     "test": "jest",
     "tsc": "tsc",
-    "dev": "react-native bundle-harmony --dev"
+    "dev": "react-native bundle-harmony --dev",
+    "logs:js": "node scripts/capture-js-logs.js"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "2.2.0",
+    "@react-native-community/netinfo": "^12.0.1",
     "@react-native-community/push-notification-ios": "^1.12.0",
     "@react-native-oh/react-native-harmony": "0.84.3",
     "@react-native-ohos/async-storage": "2.3.0-beta.1",
-    "@yxim/nim-rn-sdk-ng": "10.11.5-alpha.6",
+    "@yxim/nim-rn-sdk-ng": "10.11.15-alpha.6",
     "nim-web-sdk-ng": "^10.10.13",
     "react": "19.2.3",
     "react-native": "0.84.1"
