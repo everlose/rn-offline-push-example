@@ -19,6 +19,7 @@
     "@react-native-community/push-notification-ios": "^1.12.0",
     "@react-native-oh/react-native-harmony": "0.84.3",
     "@react-native-ohos/async-storage": "2.3.0-beta.1",
+    "@react-native-ohos/netinfo": "^12.0.0",
     "@yxim/nim-rn-sdk-ng": "10.11.15-alpha.6",
     "nim-web-sdk-ng": "^10.10.13",
     "react": "19.2.3",

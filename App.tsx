@@ -26,9 +26,23 @@ import {
 // import NIMSDK from 'nim-web-sdk-ng/dist/v2/NIM_RN_SDK';
 import NIMSDK from '@yxim/nim-rn-sdk-ng';
 
-// netinfo 不由 SDK 声明依赖，由宿主在首次登录前注入；鸿蒙端需另装 @react-native-ohos/netinfo 后再打开
-const NetInfo = require('@react-native-community/netinfo');
-NIMSDK.registerPlugin(NetInfo.default ?? NetInfo, 'netinfo');
+// netinfo 不由 SDK 声明依赖，由宿主在首次登录前注入；SDK 只认传进去的插件对象，不关心它从哪个包来。
+//
+// 这里能直接 require('@react-native-community/netinfo')，是因为各端装的东西不一样：
+// - Android / iOS：装 @react-native-community/netinfo 就够，原生模块 RNCNetInfo 由它自己提供；
+// - 鸿蒙：社区包没有鸿蒙原生实现，必须**额外**装 @react-native-ohos/netinfo，
+//   它靠 harmony/netinfo.har 提供同名的 RNCNetInfo（RNOH autolinking 自动注册 NetInfoPackage，
+//   JS 侧不用 import 它，包名仍然是社区包名）。
+//
+// 所以用 require 而不是 import：两样都没装的宿主，社区包入口会在求值阶段直接抛错，
+// 静态 import 包不住（import 是提升的），require 才能放进 try/catch 里，
+// 兜住之后只让 SDK 退化成「未知 + 已连接」，不至于整个 demo 起不来。
+try {
+  const NetInfo = require('@react-native-community/netinfo');
+  NIMSDK.registerPlugin(NetInfo.default ?? NetInfo, 'netinfo');
+} catch (error) {
+  console.warn('[demo] netinfo 注入失败，网络能力降级：', (error as Error).message);
+}
 
 const RN_MAIN_ACTIVITY = `${RN_PACKAGE_NAME}.MainActivity`;
 type NimInstance = InstanceType<typeof NIMSDK> & {
